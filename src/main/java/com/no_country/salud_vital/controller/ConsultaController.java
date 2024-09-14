@@ -1,5 +1,7 @@
 package com.no_country.salud_vital.controller;
 
+import com.no_country.salud_vital.service.ConsultaService;
+import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid;
 
 import com.no_country.salud_vital.domain.consulta.AgendaDeConsultaService;
@@ -13,17 +15,22 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
-@RestController
+@Controller
+@ResponseBody
 @RequestMapping("/consultas")
+@SuppressWarnings("all")
 public class ConsultaController {
 
     @Autowired
+    private ConsultaService consultaService;
+    @Autowired
     private AgendaDeConsultaService service;
-
     @GetMapping
+    @Operation(summary = "Obtiene el listado de consultas")
     public ResponseEntity<Page<DatosDetalleConsulta>> listar(@PageableDefault(size = 10, sort = {"fecha"}) Pageable paginacion) {
         var response = service.consultar(paginacion);
         return ResponseEntity.ok(response);
@@ -31,16 +38,29 @@ public class ConsultaController {
 
     @PostMapping
     @Transactional
-    public ResponseEntity<DatosDetalleConsulta> agendar(@RequestBody @Valid DatosAgendarConsulta datos) throws ValidacionDeIntegridad {
+    @Operation(
+            summary = "registra una consulta en la base de datos",
+            description = "",
+            tags = { "consulta", "post" })
+    public ResponseEntity agendar(@RequestBody @Valid DatosAgendarConsulta datos) throws ValidacionDeIntegridad {
         var response = service.agendar(datos);
         return ResponseEntity.ok(response);
     }
 
     @DeleteMapping
     @Transactional
-    public ResponseEntity<Void> cancelar(@RequestBody @Valid DatosCancelamientoConsulta datos) {
-        service.cancelar(datos);
+    @Operation(
+            summary = "cancela una consulta de la agenda",
+            description = "requiere motivo",
+            tags = { "consulta", "delete" })
+    public ResponseEntity cancelar(@RequestBody @Valid DatosCancelamientoConsulta dados) {
+        service.cancelar(dados);
         return ResponseEntity.noContent().build();
     }
-}
 
+    @GetMapping(path = "/{idPaciente}")
+    public Page<DatosDetalleConsulta> getConsultasPorId(@PathVariable Long idPaciente,
+                                                        @PageableDefault(size = 10, sort = {"fecha"})Pageable paginacion){
+        return consultaService.getConsultasPorPacienteId(idPaciente, paginacion);
+    }
+}

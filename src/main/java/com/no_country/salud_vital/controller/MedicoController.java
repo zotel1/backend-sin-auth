@@ -1,6 +1,7 @@
 package com.no_country.salud_vital.controller;
 
 import com.no_country.salud_vital.domain.medico.*;
+import com.no_country.salud_vital.service.MedicoService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.transaction.Transactional;
@@ -16,14 +17,17 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import java.net.URI;
+import java.time.LocalDateTime;
+import java.util.List;
 
 @RestController
 @RequestMapping("/medicos")
-//@SecurityRequirement(name = "bearer-key")
 public class MedicoController {
 
     @Autowired
     private MedicoRepository medicoRepository;
+    @Autowired
+    private MedicoService medicoService;
 
     @PostMapping
     @Transactional
@@ -42,7 +46,7 @@ public class MedicoController {
 
     }
 
-    @GetMapping
+    @GetMapping(path = "/medicos")
     @Operation(summary = "Obtiene el listado de medicos")
     public ResponseEntity<Page<DatosListadoMedico>> listadoMedicos(@PageableDefault(size = 2) Pageable paginacion) {
 //        return medicoRepository.findAll(paginacion).map(DatosListadoMedico::new);
@@ -83,5 +87,19 @@ public class MedicoController {
                         medico.getDireccion().getComplemento()));
         return ResponseEntity.ok(datosMedico);
     }
+    @GetMapping("/{especialidad}/{fecha}")
+    @Operation(summary = "Obtiene todos los medicos de una especialidad disponibles para la fecha")
+    public ResponseEntity<Page<DatosListadoMedico>> listadoMedicoPorEspecialidadYFecha (@PathVariable String especialidad
+            , @PathVariable LocalDateTime fecha, Pageable paginacion){
+        List<Medico> medicosEspecialidadYFecha = medicoService.obtenerMedicosDisponibles(especialidad,fecha);
+        Page<DatosListadoMedico> page = medicoService.getDatosMedicos(medicosEspecialidadYFecha,paginacion);
+        return ResponseEntity.ok(page);
+    }
 
+    @GetMapping("/especialidad")
+    @Operation(summary = "Obtiene todas las especialidades disponibles")
+    public ResponseEntity<Page<String>> getEspecialidades(Pageable paginacion){
+
+        return ResponseEntity.ok(medicoService.getEspecialidades(paginacion));
+    }
 }
