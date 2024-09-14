@@ -72,19 +72,14 @@ public class AgendaDeConsultaService {
     }
 
     //private Medico seleccionarMedico(DatosAgendarConsulta datos) {
-
-    // Pageable page = PageRequest.of(0, 1, Sort.by("rand()"));
-
-    //  if(datos.idMedico()!=null){
-    //    return medicoRepository.getReferenceById(datos.idMedico());
+    //   if(datos.idMedico()!=null){
+    //      return medicoRepository.getReferenceById(datos.idMedico());
     //  }
     //  if(datos.especialidad()==null){
-    //    throw new ValidacionDeIntegridad("debe seleccionarse una especialidad para el medico");
-    // }
-
+    //      throw new ValidacionDeIntegridad("debe seleccionarse una especialidad para el medico");
+    //  }
     // return medicoRepository.seleccionarMedicoConEspecialidadEnFecha(datos.especialidad(),datos.fecha());
-    //return medicoRepository.seleccionarMedicoConEspecialidadEnFecha(datos.especialidad(),datos.fecha()).getContent().get(0);
-    // }
+    //}
 
     public Page<DatosDetalleConsulta> consultar(Pageable paginacion) {
         return consultaRepository.findAll(paginacion).map(DatosDetalleConsulta::new);

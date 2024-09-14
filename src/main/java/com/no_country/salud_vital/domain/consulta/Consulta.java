@@ -9,7 +9,6 @@ import lombok.NoArgsConstructor;
 import com.no_country.salud_vital.domain.medico.Medico;
 
 import java.time.LocalDateTime;
-
 @Table(name = "consultas")
 @Entity(name = "Consulta")
 @Getter
@@ -45,4 +44,6 @@ public class Consulta {
     public void cancelar(MotivoCancelamiento motivo) {
         this.motivoCancelamiento = motivo;
     }
+
+
 }
