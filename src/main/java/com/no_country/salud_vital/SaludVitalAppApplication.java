@@ -10,15 +10,5 @@ public class SaludVitalAppApplication {
 		SpringApplication.run(SaludVitalAppApplication.class, args);
 	}
 
-
-	@SpringBootApplication
-	public static class SaludVitalAppApplication {
-
-		public static void main(String[] args) {
-			SpringApplication.run(SaludVitalAppApplication.class, args);
-		}
-
-
-	}
 }
 
