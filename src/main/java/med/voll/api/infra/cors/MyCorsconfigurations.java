@@ -15,7 +15,9 @@ public class MyCorsconfigurations {
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
                         .allowedOrigins("https://deploy-nocountry.vercel.app/")
-                        .allowedMethods("HEAD", "GET", "PUT", "POST", "DELETE", "PATH");
+                        .allowedMethods("HEAD", "GET", "PUT", "POST", "DELETE", "PATH")
+                        .allowedHeaders("*")
+                        .allowCredentials(true);
             }
         };
     }
