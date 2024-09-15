@@ -11,23 +11,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class SaludVitalAppApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SaludVitalAppApplication.class, args);
+		SpringApplication.run(med.voll.api.SaludVitalAppApplication.class, args);
 	}
 
-
 }
-@Configuration
-public static Myconfiguration {
 
-	@Bean
-	public WebMvcConfigurer corsConfigurer () {
-		return new WebMvcConfigurer() {
-
-			@Override
-			public void addCorsMappings(CorsRegistry registry) {
-				registry.addMapping("/**")
-						.allowedMethods("HEAD", "GET", "PUT", "POST", "DELETE", "PATH");
-			}
-		};
-	}
-}
