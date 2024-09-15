@@ -11,8 +11,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class SaludVitalAppApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(med.voll.api.SaludVitalAppApplication.class, args);
+		SpringApplication.run(SaludVitalAppApplication.class, args);
 	}
 
-}
 
+}
