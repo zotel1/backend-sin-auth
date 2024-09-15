@@ -5,6 +5,7 @@ import com.no_country.salud_vital.domain.medico.Medico;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 
+
 @Component
 public class MedicoMapper implements  Mapper<Medico, DatosListadoMedico> {
 

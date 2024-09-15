@@ -7,4 +7,3 @@ public record DatosListadoMedico(Long id, String nombre, String especialidad, St
     }
 }
 
-

@@ -8,6 +8,7 @@ import jakarta.validation.constraints.Size;
 import com.no_country.salud_vital.domain.direccion.DatosDireccion;
 
 
+
 public record DatosRegistroPaciente(
         @NotBlank
         String nombre,

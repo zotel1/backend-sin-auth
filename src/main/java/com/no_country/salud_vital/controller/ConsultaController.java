@@ -58,7 +58,7 @@ public class ConsultaController {
         return ResponseEntity.noContent().build();
     }
 
-    @GetMapping(path = "/paciente/{idPaciente}")
+    @GetMapping(path = "/{idPaciente}")
     public Page<DatosDetalleConsulta> getConsultasPorId(@PathVariable Long idPaciente,
                                                         @PageableDefault(size = 10, sort = {"fecha"})Pageable paginacion){
         return consultaService.getConsultasPorPacienteId(idPaciente, paginacion);

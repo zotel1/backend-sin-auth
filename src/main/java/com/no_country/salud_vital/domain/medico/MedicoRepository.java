@@ -30,7 +30,7 @@ public interface MedicoRepository extends JpaRepository<Medico, Long> {
 
 
     @Query("""
-            select m.activo 
+            select m.activo
             from Medico m
             where m.id=:idMedico
             """)

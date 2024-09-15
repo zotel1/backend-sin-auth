@@ -15,10 +15,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
-
 @RestController
 @RequestMapping("/pacientes")
-//@SecurityRequirement(name = "bearer-key")
+@SecurityRequirement(name = "bearer-key")
 @SuppressWarnings("all")
 public class PacienteController {
 
@@ -69,6 +68,4 @@ public class PacienteController {
         var paciente = repository.getReferenceById(id);
         return ResponseEntity.ok(new DatosDetallesPaciente(paciente));
     }
-
-
 }
