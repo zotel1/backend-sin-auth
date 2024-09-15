@@ -15,6 +15,7 @@ public class MedicoActivo implements ValidadorDeConsultas{
         if(datos.idMedico()==null){
             return;
         }
+
         var medicoActivo=repository.findActivoById(datos.idMedico());
         if(!medicoActivo){
             throw new ValidationException("No se puede permitir agendar citas con medicos inactivos en el sistema");

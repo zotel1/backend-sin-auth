@@ -12,6 +12,7 @@ public class HorarioDeFuncionamientoClinica implements ValidadorDeConsultas{
 
         var domingo = DayOfWeek.SUNDAY.equals(datos.fecha().getDayOfWeek());
 
+
         var antesdDeApertura=datos.fecha().getHour()<7;
         var despuesDeCierre=datos.fecha().getHour()>19;
         if(domingo || antesdDeApertura || despuesDeCierre){

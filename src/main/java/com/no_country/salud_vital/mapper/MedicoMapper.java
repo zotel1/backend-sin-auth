@@ -14,6 +14,7 @@ public class MedicoMapper implements  Mapper<Medico, DatosListadoMedico> {
         this.modelMapper = modelMapper;
     }
 
+
     @Override
     public DatosListadoMedico mapTo(Medico medico) {
         return modelMapper.map(medico, DatosListadoMedico.class);

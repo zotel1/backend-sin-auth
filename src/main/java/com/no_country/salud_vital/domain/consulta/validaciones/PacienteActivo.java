@@ -15,6 +15,7 @@ public class PacienteActivo implements ValidadorDeConsultas{
         if(datos.idPaciente()==null){
             return;
         }
+
         var pacienteActivo=repository.findActivoById(datos.idPaciente());
 
         if(!pacienteActivo){

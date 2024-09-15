@@ -19,5 +19,6 @@ public class MyConfigurationCors {
                         .allowedMethods("HEAD", "GET", "PUT", "POST", "DELETE", "PATH");
             }
         };
+
     }
 }

@@ -36,6 +36,7 @@ public class PacienteController {
         return ResponseEntity.created(uri).body(new DatosDetallesPaciente(paciente));
     }
 
+
     @GetMapping
     @Operation(summary = "Obtiene el listado para los pacientes")
     public ResponseEntity<Page<DatosListaPaciente>> listar(@PageableDefault(size = 10, sort = {"nombre"}) Pageable paginacion) {

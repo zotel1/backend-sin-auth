@@ -9,4 +9,5 @@ public record DatosActualizacionPaciente(
         String nombre,
         String telefono,
         DatosDireccion direccion) {
+
 }

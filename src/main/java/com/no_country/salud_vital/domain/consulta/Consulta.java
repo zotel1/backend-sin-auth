@@ -17,6 +17,7 @@ import java.time.LocalDateTime;
 @EqualsAndHashCode(of = "id")
 public class Consulta {
 
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

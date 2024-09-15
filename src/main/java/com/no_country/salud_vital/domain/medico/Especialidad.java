@@ -6,4 +6,5 @@ public enum  Especialidad {
     GINECOLOGIA,
     PEDIATRIA,
     GENERAL
+
 }

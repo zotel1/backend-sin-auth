@@ -11,6 +11,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Direccion {
 
+
     private String calle;
     private String numero;
     private String complemento;

@@ -15,6 +15,7 @@ public class ValidadorHorarioAntecedencia implements ValidadorCancelamientoDeCon
     @Autowired
     private ConsultaRepository repository;
 
+
     @Override
     public void validar(DatosCancelamientoConsulta datos) {
         var consulta = repository.getReferenceById(datos.idConsulta());

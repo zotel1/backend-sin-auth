@@ -46,6 +46,7 @@ public class MedicoController {
 
     }
 
+
     @GetMapping()
     @Operation(summary = "Obtiene el listado de medicos")
     public ResponseEntity<Page<DatosListadoMedico>> listadoMedicos(@PageableDefault(size = 2) Pageable paginacion) {

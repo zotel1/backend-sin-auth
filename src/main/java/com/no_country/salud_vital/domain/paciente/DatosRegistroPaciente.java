@@ -15,6 +15,7 @@ public record DatosRegistroPaciente(
         @Email
         String email,
 
+
         @NotBlank
         @Size(min = 0, max = 15)
         String telefono,

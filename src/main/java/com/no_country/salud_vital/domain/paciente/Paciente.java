@@ -26,6 +26,7 @@ public class Paciente {
 
     private String documento;
 
+
     @Embedded
     private Direccion direccion;
 

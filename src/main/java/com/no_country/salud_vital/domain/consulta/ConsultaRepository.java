@@ -19,6 +19,7 @@ public interface ConsultaRepository extends JpaRepository<Consulta, Long> {
 
     List<Consulta> findByFecha(LocalDateTime fecha);
 
+
     @Query("SELECT c FROM Consulta c WHERE c.paciente.id = :idPaciente")
     List<Consulta> findByIdPaciente(@Param("idPaciente") Long idPaciente);
 

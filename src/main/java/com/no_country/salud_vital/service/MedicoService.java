@@ -28,6 +28,7 @@ public class MedicoService {
     @Autowired
     private MedicoMapper medicoMapper;
 
+
     public List<Medico> obtenerMedicosDisponibles(String especialidad, LocalDateTime fecha) {
         Especialidad especialidadDefinida = Especialidad.valueOf(especialidad.toUpperCase());
         List<Medico> medicos = medicoRepository.findByEspecialidad(especialidadDefinida)
