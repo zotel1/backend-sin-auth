@@ -14,7 +14,7 @@ public class MyCorsconfigurations {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                        .allowedOrigins("https://deploy-nocountry.vercel.app/")
+                        .allowedOrigins("${CORS_ALLOWED_ORIGINS}")
                         .allowedMethods("HEAD", "GET", "PUT", "POST", "DELETE", "PATH")
                         .allowedHeaders("*")
                         .allowCredentials(true);
