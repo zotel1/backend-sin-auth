@@ -68,6 +68,7 @@ public class AgendaDeConsultaService {
 
         var consulta = consultaRepository.getReferenceById(datos.idConsulta());
         consulta.cancelar(datos.motivo());
+        consultaRepository.deleteById(datos.idConsulta());
     }
 
     //private Medico seleccionarMedico(DatosAgendarConsulta datos) {
