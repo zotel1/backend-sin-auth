@@ -1,5 +1,3 @@
-DELETE FROM `railway`.`medicos`;
-
 INSERT INTO `railway`.`medicos` (`id`, `nombre`, `email`, `documento`, `especialidad`, `calle`, `distrito`, `complemento`, `numero`, `ciudad`, `telefono`, `activo`)
 VALUES
 ('1', 'Dr. Martín Alvarez', 'martin.alvarez@example.com', '12345678', 'GENERAL', 'Calle A', 'Buenos Aires', '', '1234', 'Buenos Aires', '01123456789', '1'),
