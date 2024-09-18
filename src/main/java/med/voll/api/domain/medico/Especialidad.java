@@ -1,8 +1,13 @@
 package med.voll.api.domain.medico;
 
 public enum  Especialidad {
-    ORTOPEDIA,
+    GENERAL,
     CARDIOLOGIA,
     GINECOLOGIA,
-    PEDIATRIA
+    NEUROLOGIA,
+    NUTRICION,
+    ORTOPEDIA,
+    PEDIATRIA,
+    UROLOGIA
+
 }
