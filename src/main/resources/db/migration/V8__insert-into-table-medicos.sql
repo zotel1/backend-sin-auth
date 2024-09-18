@@ -16,7 +16,7 @@ INSERT INTO `railway`.`medicos` (`id`, `nombre`, `email`, `documento`, `especial
 VALUES ('6', 'Dr. Fernando Castelli', 'ferchuf@gmail.com', '43451341', 'CARDIOLOGIA', 'Sarmiento', 'San Juan', '900', '900', 'San Juan', '1134569230',  '1');
 
 INSERT INTO `railway`.`medicos` (`id`, `nombre`, `email`, `documento`, `especialidad`, `calle`, `distrito`, `complemento`, `numero`, `ciudad`, `telefono`, `activo`)
-VALUES ('7', 'Dra. Ana Gómez', 'anitag@gmail.com', '32932302', 'GINECOLOGIA', 'Rivadavia', 'Santa Fe', '900', '900', 'Rosario', '3771876230', '1');
+VALUES ('7', 'Dra. Ana Gómez', 'anitag@gmail.com', '32932302', 'GINECOLOGIA', 'b', 'b', 'b', 'b', 'b', 'b', '1');
 INSERT INTO `railway`.`medicos` (`id`, `nombre`, `email`, `documento`, `especialidad`, `calle`, `distrito`, `complemento`, `numero`, `ciudad`, `telefono`, `activo`)
 VALUES ('8', 'Dr. Pedro López', 'pedricr7@gmail.com', '32476132', 'GINECOLOGIA', '9 de Julio', 'Misiones', '900', '900', 'Posadas', '3704876529', '1');
 INSERT INTO `railway`.`medicos` (`id`, `nombre`, `email`, `documento`, `especialidad`, `calle`, `distrito`, `complemento`, `numero`, `ciudad`, `telefono`, `activo`)
