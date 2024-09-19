@@ -1,10 +1,11 @@
+DELETE FROM `railway`.`medicos`;
 
 INSERT INTO `railway`.`medicos` (`id`, `nombre`, `email`, `documento`, `especialidad`, `calle`, `distrito`, `complemento`, `numero`, `ciudad`, `telefono`, `activo`)
 VALUES ('1', 'Antonio Rios', 'antoniosaul@gmail.com', '35988675', 'GENERAL', 'Florida', 'Misiones', '900', '900', 'Buenos Aires', '3517789075', '1');
 INSERT INTO `railway`.`medicos` (`id`, `nombre`, `email`, `documento`, `especialidad`, `calle`, `distrito`, `complemento`, `numero`, `ciudad`, `telefono`, `activo`)
 VALUES ('2', 'Bernardo  Caballero', 'berniber@gmail.com', '21242121', 'GENERAL', 'San Martín', 'Mendoza', '900', '900', 'Mendoza', '3794278364', '1');
 INSERT INTO `railway`.`medicos` (`id`, `nombre`, `email`, `documento`, `especialidad`, `calle`, `distrito`, `complemento`, `numero`, `ciudad`, `telefono`, `activo`)
-VALUES ('3', 'Carlos Perez', 'carlitospc@gmail.com', '23247323', 'GENERAL', 'Corrientes', 'Salta', '900', '900', 'Salta', '3538768210' '0');
+VALUES ('3', 'Carlos Perez', 'carlitospc@gmail.com', '23247323', 'GENERAL', 'Corrientes', 'Salta', '900', '900', 'Salta', '3538768210', '1');
 INSERT INTO `railway`.`medicos` (`id`, `nombre`, `email`, `documento`, `especialidad`, `calle`, `distrito`, `complemento`, `numero`, `ciudad`, `telefono`, `activo`)
 VALUES ('4', 'Guts Palacios', 'guts@gmail.com', '32783232', 'CARDIOLOGIA', 'Rivadavia', 'Santa Fe', '900', '900', 'Rosario', '3771876230', '1');
 INSERT INTO `railway`.`medicos` (`id`, `nombre`, `email`, `documento`, `especialidad`, `calle`, `distrito`, `complemento`, `numero`, `ciudad`, `telefono`, `activo`)
