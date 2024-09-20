@@ -1,3 +1,5 @@
+DELETE FROM `railway`.`consultas`;
+
 INSERT INTO railway.consultas (medico_id, paciente_id, fecha, motivo_cancelamiento)
 VALUES ('1', '1', '2024-07-05 09:00:00', NULL);
 INSERT INTO railway.consultas (medico_id, paciente_id, fecha, motivo_cancelamiento)
